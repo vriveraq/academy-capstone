@@ -1,0 +1,21 @@
+ports:
+  - port: 4040 # pyspark UI
+    onOpen: notify
+tasks:
+  - name: setup
+    init: |
+      python3 -m venv venv
+    command: |
+      echo "source $(pwd)/venv/bin/activate" >> ~/.bashrc
+      source venv/bin/activate
+image:
+  file: .gitpod.Dockerfile
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: false
+    addComment: false
+    addBadge: true
