@@ -116,6 +116,7 @@ To conclude this capstone project, you will setup an Airflow environment and upl
 
 Navigate to MWAA in the AWS console and create a new environment. Apply the following configuration:
 - Naming convetion and tags still apply
+- VPC: vpc-academy-capstone-winter-2022
 - S3 Bucket: `s3://dataminded-academy-capstone-resources`
 - DAGs folder: s3://dataminded-academy-capstone-resources/{YOUR_AWS_USERNAME}/dags
 - Switch `web server access` to `Public network` 
