@@ -100,10 +100,10 @@ After creation, push your docker image to this repo.
 With your image pushed to the repository, navigate to AWS Batch and create a new Job Definition. Apply the following configuration:
 - Name: Make sure it starts with your AWS username
 - Platform type: EC2
-- Container properties:
+- Job configuration:
     - Image: Image you pushed during the previous step
     - Command: Depends on your image:)
-    - Job role configuration: `academy-capstone-winter-2022-batch-job-role`
+    - Execution role: `academy-capstone-winter-2022-batch-job-role`
 - Tags:
   - `environment`: `academy-capstone-winter-2022`
   
