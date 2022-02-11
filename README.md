@@ -90,7 +90,7 @@ IMPORTANT NOTES:
 
 ### Step 1: Containerize
 Create a `Dockerfile` that packages your application. You can start from one of our Data Minded images
-which pre-installs PySpark and it's dependencies: put `FROM public.ecr.aws/dataminded/spark-k8s-glue:v3.1.2-hadoop-3.3.1` at the top of your Dockerfile.
+which pre-installs Spark and it's dependencies: put `FROM public.ecr.aws/dataminded/spark-k8s-glue:v3.1.2-hadoop-3.3.1` at the top of your Dockerfile.
 
 ### Step 2: Push your image to an ECR repository
 Through the AWS console, create a private ECR repository. It's name should start with your AWS username.
