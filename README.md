@@ -104,6 +104,7 @@ With your image pushed to the repository, navigate to AWS Batch and create a new
 - Job configuration:
     - Image: Image you pushed during the previous step
     - Command: Depends on your image:)
+    - Job Role Configuration: `academy-capstone-winter-2022-batch-job-role`
 - Tags:
   - `environment`: `academy-capstone-winter-2022`
   
