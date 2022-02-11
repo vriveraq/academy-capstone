@@ -134,5 +134,6 @@ If the Airflow triggered Batch job ran successfully: Congratulations! You've com
 ## Bonus: Writing and scheduling an air quality data ingest job
 In case you finished the capstone but want to expand your pipeline, feel free to create an ingest job which fetches air quality data and stores it in S3.
 To this end, have a look at the [openaq project](https://openaq.org/#/). They expose a public API which can be called to retrieve air quality metrics filtered on a set of parameters. (Note: We used this API to gather the raw files you transformed and loaded into Snowflake)
+You can ingest your data to the following S3 location `s3://dataminded-academy-capstone-resources/{YOUR_USER_NAME}/ingest/`
 
 Feel free to tackle this however you want and we are here to help!
