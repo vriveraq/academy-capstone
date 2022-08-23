@@ -61,13 +61,7 @@ Scan the Snowflake docs to figure out how to load data through Spark. All requir
 
 When everything's tied together and functional, you can proceed to the next task.
 
-## Task 2: Build dashboards through SQL queries on Snowsight
-With the transformed weather data available on Snowflake, login on Snowflake and navigate to Snowsight.
-The team wants you to perform a couple analysis through SQL and build an insightful graph for each of them:
-1) Show the monthly maximum values of each air quality metric
-2) [Optional] Compare the daily max of each metric to its 7-day historic maximum. You will require window functions
-
-## Task 3: Run your PySpark application on the cloud
+## Task 2: Run your PySpark application on the cloud
 As a data engineer, you might run your application locally during develoment (as you have done during the first task)
 but you should always run your applications on a stable, scalable environment with scheduling in place and
 ideally deployed through CICD.
@@ -131,9 +125,15 @@ Finally, create a DAG that triggers a batch job and upload it in the previously 
 
 If the Airflow triggered Batch job ran successfully: Congratulations! You've completed the Data Minded Academy Capstone!
 
-## Bonus: Writing and scheduling an air quality data ingest job
+## Bonus 1: Writing and scheduling an air quality data ingest job
 In case you finished the capstone but want to expand your pipeline, feel free to create an ingest job which fetches air quality data and stores it in S3.
 To this end, have a look at the [openaq project](https://openaq.org/#/). They expose a public API which can be called to retrieve air quality metrics filtered on a set of parameters. (Note: We used this API to gather the raw files you transformed and loaded into Snowflake)
 You can ingest your data to the following S3 location `s3://dataminded-academy-capstone-resources/{YOUR_USER_NAME}/ingest/`
+
+## Bonus 2: Build dashboards through SQL queries on Snowsight
+With the transformed weather data available on Snowflake, login on Snowflake and navigate to Snowsight.
+The team wants you to perform a couple analysis through SQL and build an insightful graph for each of them:
+1) Show the monthly maximum values of each air quality metric
+2) Compare the daily max of each metric to its 7-day historic maximum. You will require window functions
 
 Feel free to tackle this however you want and we are here to help!
