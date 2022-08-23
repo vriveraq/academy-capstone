@@ -106,22 +106,11 @@ After creating the job definition you can run it by submitting a new job. Again,
 You can submit the job to the following queue: `academy-capstone-winter-2022-job-queue`
 
 ### Step 4: Scheduling through MWAA
-To conclude this capstone project, you will setup an Airflow environment and upload a DAG that triggers your AWS Batch job.
+To conclude this capstone project, create a DAG that triggers your AWS Batch job and upload it to an MWAA environment created for you.
+You will find you environment by navigating to MWAA in the AWS console under the name `<YOUR_USER_NAME>-mwaa-env`. Upload your DAG to the following folder: `test2-mwaa-env`.
+You can access the Airflow Web UI through the link in the console.
 
-Navigate to MWAA in the AWS console and create a new environment. Apply the following configuration:
-- Naming convetion and tags still apply
-- VPC: vpc-academy-capstone-winter-2022
-- S3 Bucket: `s3://dataminded-academy-capstone-resources`
-- DAGs folder: s3://dataminded-academy-capstone-resources/{YOUR_AWS_USERNAME}/dags
-- Switch `web server access` to `Public network` 
-- UNcheck `create new security group` and select `academy-capstone-winter-2022-mwaa-sg` under the existing SG dropdown menu
-- Check all logs and set log level to INFO
-- Select `academy-capstone-winter-2022-mwaa-role` as the execution role
-
-Following successfull creation you can access the Airflow Web UI through the link in the console.
-
-Finally, create a DAG that triggers a batch job and upload it in the previously specified DAG folder on S3. It should pop up in the Airflow UI where you can trigger it manually.
-
+After a successful upload, your DAG should be visible in the Airflow UI.
 
 If the Airflow triggered Batch job ran successfully: Congratulations! You've completed the Data Minded Academy Capstone!
 
