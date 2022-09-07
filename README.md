@@ -80,7 +80,7 @@ IMPORTANT NOTES:
 - Most resources you create will require a name that starts with your AWS username
 - Where applicable, you will need to tag every resource you create with:
   
-  `environment`: `academy-capstone-winter-2022`
+  `environment`: `academy-capstone-summer-2022`
 
 ### Step 1: Containerize
 Create a `Dockerfile` that packages your application. You can start from one of our Data Minded images
@@ -94,16 +94,16 @@ After creation, push your docker image to this repo.
 With your image pushed to the repository, navigate to AWS Batch and create a new Job Definition. Apply the following configuration:
 - Name: Make sure it starts with your AWS username
 - Platform type: EC2
-- Execution role: `academy-capstone-winter-2022-batch-job-role`
+- Execution role: `academy-capstone-summer-2022-batch-job-role`
 - Job configuration:
     - Image: Image you pushed during the previous step
     - Command: Depends on your image:)
-    - Job Role Configuration: `academy-capstone-winter-2022-batch-job-role`
+    - Job Role Configuration: `academy-capstone-summer-2022-batch-job-role`
 - Tags:
-  - `environment`: `academy-capstone-winter-2022`
+  - `environment`: `academy-capstone-summer-2022`
   
 After creating the job definition you can run it by submitting a new job. Again, apply the correct naming convention and tags. 
-You can submit the job to the following queue: `academy-capstone-winter-2022-job-queue`
+You can submit the job to the following queue: `academy-capstone-summer-2022-job-queue`
 
 ### Step 4: Scheduling through MWAA
 To conclude this capstone project, create a DAG that triggers your AWS Batch job and upload it to an MWAA environment created for you.
