@@ -71,7 +71,7 @@ This requires you to execute the following steps:
 1) Containerize your application through Docker
 2) Create an ECR repository and push your image
 3) Create a batch job definition which runs your application (and test it for good measure)
-4) Set up an MWAA environment and create/push a DAG that trigger a batch job using your job definition
+4) Create and upload a DAG that trigger a batch job using your job definition to a pre-created MWAA environment
 5) ??
 6) Profit
 
