@@ -107,7 +107,7 @@ You can submit the job to the following queue: `academy-capstone-summer-2022-job
 
 ### Step 4: Scheduling through MWAA
 To conclude this capstone project, create a DAG that triggers your AWS Batch job and upload it to an MWAA environment created for you.
-You will find you environment by navigating to MWAA in the AWS console under the name `<YOUR_USER_NAME>-mwaa-env`. Upload your DAG to the following folder: `test2-mwaa-env`.
+You will find your environment by navigating to MWAA in the AWS console under the name `<YOUR_USER_NAME>-mwaa-env`. Upload your DAG to the DAG folder specified in your MWAA environment.
 You can access the Airflow Web UI through the link in the console.
 
 After a successful upload, your DAG should be visible in the Airflow UI.
