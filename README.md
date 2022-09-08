@@ -2,8 +2,8 @@
 Welcome to the Capstone project! During the next 1.5 days you will apply everything you've learned during the past days 
 in an integrated exercise. You will:
 1) Read, transform and load weather data from S3 to Snowflake through PySpark
-2) Build dashboards with SQL on Snowflake
-3) Take a stab at running your application on AWS through Docker, AWS Batch and Airflow
+2) Take a stab at running your application on AWS through Docker, AWS Batch and Airflow
+3) Run your pipeline on our inhouse tool Conveyor to experience a more complete solution
 
 ## Getting started
 We set up a gitpod environment containing all the tools required to complete this exercise (awscli, python, vscode, ...).
@@ -106,13 +106,18 @@ After creating the job definition you can run it by submitting a new job. Again,
 You can submit the job to the following queue: `academy-capstone-summer-2022-job-queue`
 
 ### Step 4: Scheduling through MWAA
-To conclude this capstone project, create a DAG that triggers your AWS Batch job and upload it to an MWAA environment created for you.
+To conclude this  part, create a DAG that triggers your AWS Batch job and upload it to an MWAA environment created for you.
 You will find your environment by navigating to MWAA in the AWS console under the name `<YOUR_USER_NAME>-mwaa-env`. Upload your DAG to the DAG folder specified in your MWAA environment.
 You can access the Airflow Web UI through the link in the console.
 
-After a successful upload, your DAG should be visible in the Airflow UI.
+After a successful upload, your DAG should be visible in the Airflow UI and can be triggered.
 
-If the Airflow triggered Batch job ran successfully: Congratulations! You've completed the Data Minded Academy Capstone!
+## Task 3: Conveyor
+On Friday afternoon you will receive a brief introduction to Conveyor and will be tasked with deploying your code on the Conveyor platform.
+You will need to keep a couple changes in mind as Conveyor runs in a different AWS account:
+- The accountid is `130966031144`
+- The bucket containing the raw files is `dataminded-academy-capstone-resources2`
+
 
 ## Bonus 1: Writing and scheduling an air quality data ingest job
 In case you finished the capstone but want to expand your pipeline, feel free to create an ingest job which fetches air quality data and stores it in S3.
