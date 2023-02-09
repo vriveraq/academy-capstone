@@ -10,6 +10,7 @@ We set up a gitpod environment containing all the tools required to complete thi
 You can access this environment by clicking the button below:
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/datamindedbe/academy-capstone)
+NOTE: When you push to your own remote make sure to change the Gitpod URL to reflect your account in this README!
 
 This is an ubuntu-based environment pre-installed with:
 - VSCode
@@ -25,7 +26,7 @@ Default region name [None]: eu-west-1
 Default output format [None]: json
 ```
 IMPORTANT: Create a new branch and periodically push your work to the remote. After 30min of inactivity this
-environment shuts down and you will lose unsaved progress.
+environment shuts down and you will lose unsaved progress. As stated before, change the GitPod URL to reflect your remote.
 
 ## Task 1: Extract, transform and load weather data from S3 to Snowflake
 Our team recently ingested Belgian weather data from the [openaq](https://openaq.org/) API and stored it on AWS S3
@@ -80,7 +81,7 @@ IMPORTANT NOTES:
 - Most resources you create will require a name that starts with your AWS username
 - Where applicable, you will need to tag every resource you create with:
   
-  `environment`: `academy-capstone-summer-2022`
+  `environment`: `academy-capstone-winter-2023`
 
 ### Step 1: Containerize
 Create a `Dockerfile` that packages your application. You can start from one of our Data Minded images
@@ -94,16 +95,16 @@ After creation, push your docker image to this repo.
 With your image pushed to the repository, navigate to AWS Batch and create a new Job Definition. Apply the following configuration:
 - Name: Make sure it starts with your AWS username
 - Platform type: EC2
-- Execution role: `academy-capstone-summer-2022-batch-job-role`
+- Execution role: `academy-capstone-winter-2023-batch-job-role`
 - Job configuration:
     - Image: Image you pushed during the previous step
     - Command: Depends on your image:)
-    - Job Role Configuration: `academy-capstone-summer-2022-batch-job-role`
+    - Job Role Configuration: `academy-capstone-winter-2023-batch-job-role`
 - Tags:
-  - `environment`: `academy-capstone-summer-2022`
+  - `environment`: `academy-capstone-winter-2023`
   
 After creating the job definition you can run it by submitting a new job. Again, apply the correct naming convention and tags. 
-You can submit the job to the following queue: `academy-capstone-summer-2022-job-queue`
+You can submit the job to the following queue: `academy-capstone-winter-2023-job-queue`
 
 ### Step 4: Scheduling through MWAA
 To conclude this  part, create a DAG that triggers your AWS Batch job and upload it to an MWAA environment created for you.
