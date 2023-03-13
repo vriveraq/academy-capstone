@@ -82,7 +82,7 @@ IMPORTANT NOTES:
 - Most resources you create will require a name that starts with your AWS username
 - Where applicable, you will need to tag every resource you create with:
   
-  `environment`: `academy-capstone-winter-2023`
+  `environment`: `academy-capstone-pxl-2023`
 
 ### Step 1: Containerize
 Create a `Dockerfile` that packages your application. You can start from one of our Data Minded images
@@ -96,20 +96,20 @@ After creation, push your docker image to this repo.
 With your image pushed to the repository, navigate to AWS Batch and create a new Job Definition. Apply the following configuration:
 - Name: Make sure it starts with your AWS username
 - Platform type: EC2
-- Execution role: `academy-capstone-winter-2023-batch-job-role`
+- Execution role: `academy-capstone-pxl-2023-batch-job-role`
 - Job configuration:
     - Image: Image you pushed during the previous step
     - Command: Depends on your image:)
-    - Job Role Configuration: `academy-capstone-winter-2023-batch-job-role`
+    - Job Role Configuration: `academy-capstone-pxl-2023-batch-job-role`
 - Tags:
-  - `environment`: `academy-capstone-winter-2023`
+  - `environment`: `academy-capstone-pxl-2023`
   
 After creating the job definition you can run it by submitting a new job. Again, apply the correct naming convention and tags. 
-You can submit the job to the following queue: `academy-capstone-winter-2023-job-queue`
+You can submit the job to the following queue: `academy-capstone-pxl-2023-job-queue`
 
 ### Step 4: Scheduling through MWAA
 To conclude this  part, create a DAG that triggers your AWS Batch job and upload it to an MWAA environment created for you.
-You will find your environment by navigating to MWAA in the AWS console under the name `<YOUR_USER_NAME>-mwaa-env`. Upload your DAG to the DAG folder specified in your MWAA environment.
+You will find your environment by navigating to MWAA in the AWS console under the name `shared-mwaa-env`. Upload your DAG to the DAG folder specified in your MWAA environment.
 You can access the Airflow Web UI through the link in the console.
 
 After a successful upload, your DAG should be visible in the Airflow UI and can be triggered.
